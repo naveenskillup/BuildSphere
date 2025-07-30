@@ -1,4 +1,4 @@
-﻿
-/.vs
-/BuildSphere.Services/.vs/BuildSphere.Services
-/BuildSphere.Services/obj
+﻿**/obj/
+**/bin/
+.vs/
+**/.vs/
