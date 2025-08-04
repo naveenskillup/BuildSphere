@@ -4,10 +4,11 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BuildSphere.Core.Interfaces;
 
 namespace BuildSphere.Core.Definitions
 { 
-    public class Project
+    public class Project : IIdentifiable
     {
         /// <summary>
         /// Unique identifier for the project.

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BuildSphere.Core.Interfaces;
 
 namespace BuildSphere.Core.Definitions
 {
@@ -10,8 +11,13 @@ namespace BuildSphere.Core.Definitions
     /// Specifications of the house.
     /// (i.e., uses ultratech cement for the construction, 4 windows for the entire house and made up of Neem).
     /// </summary>
-    public class Specification
+    public class Specification : IIdentifiable
     {
+        /// <summary>
+        /// Unique identifier for the specification.
+        /// </summary>
+        public int Id { get; set; }
+
         /// <summary>
         /// Specification name (i.e., cement = ultratech).
         /// </summary>

@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BuildSphere.Core.Interfaces;
 
 namespace BuildSphere.Core.Definitions
 {
     /// <summary>
     /// It is step at which the payment need to be settled to the builder for the project.
     /// </summary>
-    public class Milestone
+    public class Milestone : IIdentifiable
     {
         /// <summary>
         /// Unique identifier for the milestone.
