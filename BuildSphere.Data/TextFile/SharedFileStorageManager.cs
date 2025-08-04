@@ -15,7 +15,7 @@ namespace BuildSphere.Data.TextFile
         public SharedFileStorageManager(string fileName) 
         {
             _data = new();
-            _fileFullPath = Path.Combine(_projectPath, "BuildSpere.Data", "TextFile", "DataStorage", fileName);
+            _fileFullPath = Path.Combine(_projectPath, "BuildSphere.Data", "TextFile", "DataStorage", fileName);
             LoadFile();
         }
 
