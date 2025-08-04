@@ -1,4 +1,4 @@
-using BuildSphere.Core.Interfaces;
+using BuildSphere.Data.Repository.Interfaces;
 using BuildSphere.Data.TextFile;
 
 var builder = WebApplication.CreateBuilder(args);

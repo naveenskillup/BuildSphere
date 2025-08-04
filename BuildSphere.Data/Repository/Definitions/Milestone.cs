@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BuildSphere.Core.Interfaces;
+﻿using BuildSphere.Data.Repository.Interfaces;
 
-namespace BuildSphere.Core.Definitions
+namespace BuildSphere.Data.Repository.Definitions
 {
     /// <summary>
     /// It is step at which the payment need to be settled to the builder for the project.

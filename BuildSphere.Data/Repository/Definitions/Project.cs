@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BuildSphere.Core.Interfaces;
+﻿using BuildSphere.Data.Repository.Interfaces;
 
-namespace BuildSphere.Core.Definitions
+namespace BuildSphere.Data.Repository.Definitions
 { 
     public class Project : IIdentifiable
     {

@@ -1,11 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35527.113 d17.12
+VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildSphere.Services", "BuildSphere.Services.csproj", "{942CA058-FD7D-4F72-AD7B-662954CD2EEA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildSphere.Core", "..\BuildSphere.Core\BuildSphere.Core.csproj", "{ECE450EA-8E04-42BC-B55F-91D0A4AF3DFD}"
+	ProjectSection(ProjectDependencies) = postProject
+		{11F7C680-F9CF-4E73-A083-5B86C2EDA446} = {11F7C680-F9CF-4E73-A083-5B86C2EDA446}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildSphere.Data", "..\BuildSphere.Data\BuildSphere.Data.csproj", "{11F7C680-F9CF-4E73-A083-5B86C2EDA446}"
 EndProject

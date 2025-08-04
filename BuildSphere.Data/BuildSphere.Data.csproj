@@ -7,10 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BuildSphere.Core\BuildSphere.Core.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Folder Include="Sql\" />
   </ItemGroup>
 

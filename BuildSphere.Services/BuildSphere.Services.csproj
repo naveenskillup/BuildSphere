@@ -13,7 +13,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BuildSphere.Core\BuildSphere.Core.csproj" />
-    <ProjectReference Include="..\BuildSphere.Data\BuildSphere.Data.csproj" />
   </ItemGroup>
 
 </Project>

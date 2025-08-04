@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BuildSphere.Core.Definitions;
+﻿using BuildSphere.Data.Repository.Definitions;
 
-namespace BuildSphere.Core.Interfaces
+namespace BuildSphere.Data.Repository.Interfaces
 {
     public interface IProjectRepository
     {

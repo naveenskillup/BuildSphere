@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BuildSphere.Core.Definitions;
-using BuildSphere.Core.Interfaces;
+﻿using BuildSphere.Data.Repository.Definitions;
+using BuildSphere.Data.Repository.Interfaces;
 
 namespace BuildSphere.Data.TextFile
 {
