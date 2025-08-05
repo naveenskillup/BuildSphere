@@ -12,6 +12,7 @@ namespace BuildSphere.Data.DataManager.Sql
     {
         public SqlProjectRepository(SqlConnectionFactory sqlConnectionFactory) : base(sqlConnectionFactory) 
         { }
+
         public async Task<IEnumerable<Project>> Get()
             => await QueryAsync(StoredProcedures.Project.Get);
 
@@ -26,6 +27,7 @@ namespace BuildSphere.Data.DataManager.Sql
             var parameters = ObjectToParameters(project, new[] { "Id" });
             project.Id = await InsertAndReturnIdAsync(StoredProcedures.Project.Create, parameters);
         }
+
         public async Task Update(int id, Project project)
         {
             var parameters = ObjectToParameters(project, new[] { "Id" });
@@ -38,5 +40,6 @@ namespace BuildSphere.Data.DataManager.Sql
             var parameters = new { Id = id };
             await ExecuteAsync(StoredProcedures.Project.Delete, parameters);
         }
+
     }
 }
