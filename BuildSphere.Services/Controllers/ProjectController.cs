@@ -28,7 +28,7 @@ namespace BuildSphere.Services.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Add(Project project)
+        public async Task<IActionResult> Create(Project project)
         {
             await _projectRepository.Create(project);
             return CreatedAtAction(nameof(GetById), new { id = project.Id }, project);

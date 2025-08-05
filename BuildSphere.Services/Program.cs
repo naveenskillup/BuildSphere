@@ -14,6 +14,8 @@ builder.Services.AddSingleton<SqlConnectionFactory>( provider =>
 });
 
 builder.Services.AddScoped<IProjectRepository, SqlProjectRepository>();
+builder.Services.AddScoped<IMilestoneRepository, SqlMilestoneRepository>();
+builder.Services.AddScoped<ISpecificationRepository, SqlSpecificationRepository>();
 
 
 builder.Services.AddControllers();
