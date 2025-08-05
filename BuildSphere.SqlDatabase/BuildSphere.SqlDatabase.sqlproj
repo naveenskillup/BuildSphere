@@ -68,5 +68,8 @@
     <Build Include="dbo\Tables\Milestone.sql" />
     <Build Include="dbo\Stored Procedures\sp_CreateProject.sql" />
     <Build Include="dbo\Stored Procedures\sp_GetProjects.sql" />
+    <Build Include="dbo\Stored Procedures\sp_UpdateProject.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetProjectById.sql" />
+    <Build Include="dbo\Stored Procedures\sp_DeleteProject.sql" />
   </ItemGroup>
 </Project>
