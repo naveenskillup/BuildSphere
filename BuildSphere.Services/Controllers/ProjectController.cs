@@ -9,52 +9,51 @@ namespace BuildSphere.Services.Controllers
     [ApiController]
     public class ProjectController : ControllerBase
     {
-        private readonly IProjectRepository _projectRepository;
-
         public ProjectController(IProjectRepository projectRepository)
-        {
-            _projectRepository = projectRepository;
-        }
+            => _projectRepository = projectRepository;
 
         [HttpGet]
-        public ActionResult<IEnumerable<Project>> Get()
+        public async Task<ActionResult<IEnumerable<Project>>> Get()
         {
-            return Ok(_projectRepository.Get());
+            var projects = await _projectRepository.Get();
+            return Ok(projects);
         }
 
         [HttpGet("{id}")]
-        public ActionResult<Project> GetById(int id)
+        public async Task<ActionResult<Project>> GetById(int id)
         {
-            var project = _projectRepository.GetById(id);
+            var project = await _projectRepository.GetById(id);
             if (project == null) return NotFound();
             return Ok(project);
         }
 
         [HttpPost]
-        public IActionResult Add(Project project)
+        public async Task<IActionResult> Add(Project project)
         {
-            _projectRepository.Create(project);
+            await _projectRepository.Create(project);
             return CreatedAtAction(nameof(GetById), new { id = project.Id }, project);
         }
 
         [HttpPut("{id}")]
-        public IActionResult Update(int id, Project project)
+        public async Task<IActionResult> Update(int id, Project project)
         {
-            var existing = _projectRepository.GetById(id);
+            var existing = await _projectRepository.GetById(id);
             if (existing == null) return NotFound();
 
-            _projectRepository.Update(id, project);
+            await _projectRepository.Update(id, project);
             return NoContent();
         }
 
         [HttpDelete("{id}")]
-        public IActionResult Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
-            var existing = _projectRepository.GetById(id);
+            var existing = await _projectRepository.GetById(id);
             if (existing == null) return NotFound();
 
-            _projectRepository.Delete(id);
+            await _projectRepository.Delete(id);
             return NoContent();
         }
+
+        private readonly IProjectRepository _projectRepository;
     }
 }
