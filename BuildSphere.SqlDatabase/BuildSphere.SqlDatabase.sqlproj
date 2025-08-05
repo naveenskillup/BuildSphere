@@ -71,5 +71,14 @@
     <Build Include="dbo\Stored Procedures\sp_UpdateProject.sql" />
     <Build Include="dbo\Stored Procedures\sp_GetProjectById.sql" />
     <Build Include="dbo\Stored Procedures\sp_DeleteProject.sql" />
+    <Build Include="dbo\Stored Procedures\sp_UpdateSpecification.sql" />
+    <Build Include="dbo\Stored Procedures\sp_UpdateMilestone.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetSpecificationsByProjectId.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetMilestonesByProjectId.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetMilestoneById.sql" />
+    <Build Include="dbo\Stored Procedures\sp_DeleteSpecification.sql" />
+    <Build Include="dbo\Stored Procedures\sp_DeleteMilestone.sql" />
+    <Build Include="dbo\Stored Procedures\sp_CreateSpecification.sql" />
+    <Build Include="dbo\Stored Procedures\sp_CreateMilestone.sql" />
   </ItemGroup>
 </Project>
