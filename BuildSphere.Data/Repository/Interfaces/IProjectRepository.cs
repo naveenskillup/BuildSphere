@@ -4,10 +4,10 @@ namespace BuildSphere.Data.Repository.Interfaces
 {
     public interface IProjectRepository
     {
-        Project GetById(int id);
-        IEnumerable<Project> Get();
-        void Add(Project project);
-        void Update(int id, Project project);
-        void Delete(int id);
+        Task<Project> GetById(int id);
+        Task<IEnumerable<Project>> Get();
+        Task Create(Project project);
+        Task Update(int id, Project project);
+        Task Delete(int id);
     }
 }

@@ -30,7 +30,7 @@ namespace BuildSphere.Data.TextFile
         }
 
 
-        public virtual void Add(TObject obj)
+        public virtual void Create(TObject obj)
         {
             lock (_lock)
             {

@@ -3,7 +3,7 @@ using BuildSphere.Data.Repository.Interfaces;
 
 namespace BuildSphere.Data.TextFile
 {
-    public class TextProjectRepository : SharedFileStorageManager<Project>, IProjectRepository
+    public class TextProjectRepository : SharedFileStorageManager<Project>
     {
         public TextProjectRepository() : base(_fileName)
         { }
@@ -12,7 +12,7 @@ namespace BuildSphere.Data.TextFile
 
         public override Project GetById(int id) => base.GetById(id);
 
-        public override void Add(Project project) => base.Add(project);
+        public override void Create(Project project) => base.Create(project);
 
         public override void Delete(int id) => base.Delete(id);
 

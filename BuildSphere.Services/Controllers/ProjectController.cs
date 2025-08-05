@@ -33,7 +33,7 @@ namespace BuildSphere.Services.Controllers
         [HttpPost]
         public IActionResult Add(Project project)
         {
-            _projectRepository.Add(project);
+            _projectRepository.Create(project);
             return CreatedAtAction(nameof(GetById), new { id = project.Id }, project);
         }
 
