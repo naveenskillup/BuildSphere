@@ -1,3 +1,6 @@
+using BuildSphere.Core;
+using BuildSphere.Core.Interfaces;
+using BuildSphere.Core.Services;
 using BuildSphere.Data.DataManager.Sql;
 using BuildSphere.Data.Repository.Interfaces;
 using BuildSphere.Data.TextFile;
@@ -13,9 +16,8 @@ builder.Services.AddSingleton<SqlConnectionFactory>( provider =>
     return new SqlConnectionFactory(databaseServer, databaseName);
 });
 
-builder.Services.AddScoped<IProjectRepository, SqlProjectRepository>();
-builder.Services.AddScoped<IMilestoneRepository, SqlMilestoneRepository>();
-builder.Services.AddScoped<ISpecificationRepository, SqlSpecificationRepository>();
+builder.Services.AddDataServices();
+builder.Services.AddScoped<IProjectService, ProjectService>();
 
 
 builder.Services.AddControllers();
