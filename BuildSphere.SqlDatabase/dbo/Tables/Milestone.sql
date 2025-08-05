@@ -1,5 +1,5 @@
 ﻿CREATE TABLE [dbo].[Milestone] (
-    [Id]            INT            NOT NULL,
+    [Id]            INT            IDENTITY (1, 1) NOT NULL,
     [ProjectId]     INT            NOT NULL,
     [Name]          VARCHAR (50)   NOT NULL,
     [PaymentAmount] DECIMAL (9, 2) NULL,

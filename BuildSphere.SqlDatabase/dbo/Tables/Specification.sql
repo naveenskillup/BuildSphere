@@ -1,5 +1,5 @@
 ﻿CREATE TABLE [dbo].[Specification] (
-    [Id]             INT            NOT NULL,
+    [Id]             INT            IDENTITY (1, 1) NOT NULL,
     [ProjectId]      INT            NOT NULL,
     [Name]           VARCHAR (1000) NOT NULL,
     [MeterialType]   VARCHAR (50)   NULL,

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Data;
 using System.Linq;
 using System.Reflection;
@@ -20,7 +21,9 @@ namespace BuildSphere.Data.DataManager.Sql
 
             if (obj == null) return parameters;
             
-            var properties = obj.GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance);
+            var properties = obj.GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance)
+                .Where(p => p.GetCustomAttribute<NotMappedAttribute>() == null); ;
+
             properties.Where(prop => exclude == null || !exclude.Contains(prop.Name))
                       .Select(prop => new { prop.Name, value = prop.GetValue(obj) })
                       .Where(p => !skipNulls || p.value != null)

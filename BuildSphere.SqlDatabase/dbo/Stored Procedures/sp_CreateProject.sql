@@ -3,7 +3,7 @@
 -- Create date: August 05, 2025
 -- Description:	
 -- =============================================
-CREATE PROCEDURE sp_CreateProject
+CREATE PROCEDURE [dbo].[sp_CreateProject]
 	@BuilderId INT,
     @HomeownerId INT,
     @Name NVARCHAR(255),

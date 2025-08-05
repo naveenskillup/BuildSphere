@@ -1,4 +1,5 @@
-﻿using BuildSphere.Data.Repository.Interfaces;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using BuildSphere.Data.Repository.Interfaces;
 
 namespace BuildSphere.Data.Repository.Definitions
 { 
@@ -42,12 +43,14 @@ namespace BuildSphere.Data.Repository.Definitions
         /// <summary>
         /// The specifications that is been included in the house.
         /// </summary>
-        public List<Specification> Specifications { get; set; }
+        [NotMapped]
+        public List<Specification>? Specifications { get; set; }
 
         /// <summary>
         /// The amount that need to be settled in each milestone.
         /// (i.e., after the completion of the basement 1 lack should be given).
         /// </summary>
-        public List<Milestone> Milestones { get; set; }
+        [NotMapped]
+        public List<Milestone>? Milestones { get; set; }
     }
 }

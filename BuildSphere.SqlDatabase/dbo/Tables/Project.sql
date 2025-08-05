@@ -1,5 +1,5 @@
 ﻿CREATE TABLE [dbo].[Project] (
-    [Id]                INT            NOT NULL,
+    [Id]                INT            IDENTITY (1, 1) NOT NULL,
     [BuilderId]         INT            NOT NULL,
     [HomeownerId]       INT            NOT NULL,
     [Name]              NVARCHAR (50)  NULL,
