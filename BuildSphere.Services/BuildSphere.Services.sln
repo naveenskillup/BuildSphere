@@ -14,6 +14,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildSphere.Data", "..\Buil
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildSphere.Tests", "..\BuildSphere.Tests\BuildSphere.Tests.csproj", "{6065AF9F-34A6-405B-ADBB-35A432CF71E2}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "BuildSphere.SqlDatabase", "..\BuildSphere.SqlDatabase\BuildSphere.SqlDatabase.sqlproj", "{635509D5-095F-44AC-A9F5-DD41230F5E5A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,6 +38,12 @@ Global
 		{6065AF9F-34A6-405B-ADBB-35A432CF71E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6065AF9F-34A6-405B-ADBB-35A432CF71E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6065AF9F-34A6-405B-ADBB-35A432CF71E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{635509D5-095F-44AC-A9F5-DD41230F5E5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{635509D5-095F-44AC-A9F5-DD41230F5E5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{635509D5-095F-44AC-A9F5-DD41230F5E5A}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{635509D5-095F-44AC-A9F5-DD41230F5E5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{635509D5-095F-44AC-A9F5-DD41230F5E5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{635509D5-095F-44AC-A9F5-DD41230F5E5A}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
