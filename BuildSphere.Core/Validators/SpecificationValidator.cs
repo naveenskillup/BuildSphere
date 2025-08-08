@@ -9,8 +9,7 @@ namespace BuildSphere.Core.Validators
         public SpecificationValidator() 
         {
             RuleFor(spec => spec.Name)
-                .NotEmpty().WithMessage("Specification name is required")
-                .MaximumLength(100).WithMessage("Must be at most 100 characters");
+                .Length(2, 100).WithMessage("Milestone name must be between 2 and 100 characters");
         }
     }
 }

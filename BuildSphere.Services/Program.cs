@@ -4,6 +4,7 @@ using BuildSphere.Core.Services;
 using BuildSphere.Data.DataManager.Sql;
 using BuildSphere.Data.Repository.Interfaces;
 using BuildSphere.Data.TextFile;
+using BuildSphere.Services.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -25,7 +26,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
-
+app.UseMiddleware<ExceptionHandlingMiddleware>();
 app.UseSwagger();
 app.UseSwaggerUI();
 

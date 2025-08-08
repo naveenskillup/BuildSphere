@@ -20,7 +20,7 @@ namespace BuildSphere.Data.Repository.Definitions
         /// <summary>
         /// Step at which the payment need to be settled.
         /// </summary>
-        public MilestoneType? Name { get; set; }
+        public MilestoneType Name { get; set; }
 
         /// <summary>
         /// How much amount need to be paid for the Milestone.
@@ -35,7 +35,7 @@ namespace BuildSphere.Data.Repository.Definitions
 
     public enum MilestoneType
     {
-        Basement,
+        Basement=1,
         Roofing,
         Drywall,
         Interior,

@@ -13,14 +13,15 @@ namespace BuildSphere.Core.Validators
         public ProjectValidator() 
         {
             RuleFor(project => project.Name)
-                .NotEmpty().NotEmpty().WithMessage("Project name is required")
-                .MaximumLength(100).WithMessage("Must be at most 100 characters");
+                .Length(2, 100).WithMessage("Project Name must be between 2 and 100 characters");
 
             RuleForEach(project => project.Specifications)
-                .SetValidator(new SpecificationValidator());
+                .SetValidator(new SpecificationValidator())
+                .When(project => project.Specifications?.Any() == true);
 
             RuleForEach(project => project.Milestones)
-                .SetValidator(new MilestoneValidator());
+                .SetValidator(new MilestoneValidator())
+                .When(project => project.Milestones?.Any() == true);
         }
     }
 }

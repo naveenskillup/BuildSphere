@@ -13,7 +13,7 @@ namespace BuildSphere.Core.Validators
         public MilestoneValidator()
         {
             RuleFor(milestone => milestone.Name)
-                .NotEmpty().WithMessage("Milestone name is required");
+                .IsInEnum().WithMessage("Milestone name is required");
         }
     }   
 }

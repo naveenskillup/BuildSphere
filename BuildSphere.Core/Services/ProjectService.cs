@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BuildSphere.Common.Exceptions;
 using BuildSphere.Core.Interfaces;
 using BuildSphere.Core.Validators;
 using BuildSphere.Data.Repository.Definitions;
@@ -23,8 +24,9 @@ namespace BuildSphere.Core.Services
         public async Task Create(Project project)
         {
             var validationResult = await _validator.ValidateAsync(project);
-            //need to handle this cases
-            //validationResult.Errors.Select( e => e.ErrorMessage).ToList()
+            if (!validationResult.IsValid)
+                throw BuildSphereErrors.ValidationFailed(validationResult.Errors.Select(e => e.ErrorMessage).ToList());
+
             if (project == null)
                 return;
 

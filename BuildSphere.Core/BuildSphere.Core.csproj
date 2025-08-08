@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\BuildSphere.Common\BuildSphere.Common.csproj" />
     <ProjectReference Include="..\BuildSphere.Data\BuildSphere.Data.csproj" />
   </ItemGroup>
 
