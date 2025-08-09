@@ -1,0 +1,56 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@ViewData["Title"] - Construction Dashboard</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <div class="app-container">
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <div class="sidebar-logo">
+                <img src="~/images/Builder-Logo.jpg" class="profile-pic" alt="Profile" />
+                <h5>BuildSphere</h5>
+            </div>
+
+            <nav class="sidebar-menu">
+                <a href="/" class="menu-item">🏠 Dashboard</a>
+                <a href="/Projects" class="menu-item">📂 Projects</a>
+                <a href="/Payments" class="menu-item">💰 Payments</a>
+                <a href="/Workers" class="menu-item">👷 Workers</a>
+                <a href="/Materials" class="menu-item">📦 Materials</a>
+                <a href="/Deadlines" class="menu-item">📅 Deadlines</a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="/Account/Login" class="menu-item">🔑 Login</a>
+                <a href="/Account/Logout" class="menu-item">🚪 Logout</a>
+            </div>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-section">
+            <!-- FIXED HEADER -->
+            <header class="main-header">
+                <h5>@ViewData["Title"]</h5>
+            </header>
+
+            <!-- SCROLLABLE CONTENT -->
+            <div class="main-content">
+                @RenderBody()
+            </div>
+        </main>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
