@@ -20,7 +20,7 @@
             </div>
 
             <nav class="sidebar-menu">
-                <a href="/" class="menu-item">🏠 Dashboard</a>
+                <a href="@Url.Action("Index", "Dashboard")" class="menu-item">🏠 Dashboard</a>
                 <a href="/Projects" class="menu-item">📂 Projects</a>
                 <a href="/Payments" class="menu-item">💰 Payments</a>
                 <a href="/Workers" class="menu-item">👷 Workers</a>
@@ -29,8 +29,16 @@
             </nav>
 
             <div class="sidebar-footer">
-                <a href="/Account/Login" class="menu-item">🔑 Login</a>
-                <a href="/Account/Logout" class="menu-item">🚪 Logout</a>
+                @if (User?.Identity?.IsAuthenticated == true)
+                {
+                    <a href="@Url.Action("Logout", "User")" class="menu-item">🚪 Logout</a>
+                }
+                else
+                {
+                    <a href="@Url.Action("Login", "User")" class="menu-item">🔑 Login</a>
+                    <a href="@Url.Action("Signup", "User")" class="menu-item">📝 Signup</a>
+                }
+                
             </div>
         </aside>
 

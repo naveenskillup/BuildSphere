@@ -1,6 +1,15 @@
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+// Add authentication
+builder.Services.AddAuthentication("MyCookieAuth")
+    .AddCookie("MyCookieAuth", options =>
+    {
+        options.LoginPath = "/User/Login"; // redirect here if not logged in
+        options.AccessDeniedPath = "/Account/AccessDenied";
+        options.ExpireTimeSpan = TimeSpan.FromMinutes(15);
+    });
+
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
@@ -17,11 +26,11 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=User}/{action=Login}/{id?}");
 
 app.Run();
