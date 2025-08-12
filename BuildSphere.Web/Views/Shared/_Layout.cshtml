@@ -9,6 +9,7 @@
     <title>@ViewData["Title"] - Construction Dashboard</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 </head>
 <body>
     <div class="app-container">
@@ -23,7 +24,7 @@
                 <a href="@Url.Action("Index", "Dashboard")" class="menu-item">🏠 Dashboard</a>
                 <a href="/Projects" class="menu-item">📂 Projects</a>
                 <a href="/Payments" class="menu-item">💰 Payments</a>
-                <a href="/Workers" class="menu-item">👷 Workers</a>
+                <a href="@Url.Action("Index", "Worker")" class="menu-item">👷 Workers</a>
                 <a href="/Materials" class="menu-item">📦 Materials</a>
                 <a href="/Deadlines" class="menu-item">📅 Deadlines</a>
             </nav>

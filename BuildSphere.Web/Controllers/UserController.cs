@@ -43,7 +43,7 @@ namespace BuildSphere.Web.Controllers
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync("MyCookieAuth");
-            return RedirectToAction("Login", "Account");
+            return RedirectToAction("Login", "User");
         }
     }
 }
