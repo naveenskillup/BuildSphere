@@ -1,11 +1,10 @@
-﻿using BuildSphere.Data.Repository.Definitions;
+﻿using BuildSphere.Common.Definitions;
 using BuildSphere.Data.Repository.Interfaces;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BuildSphere.Services.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/specifications")]
     [ApiController]
     public class SpecificationController : ControllerBase
     {

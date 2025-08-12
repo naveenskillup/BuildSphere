@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BuildSphere.Data.Repository.Definitions;
+﻿
+using BuildSphere.Common.Definitions;
 
 namespace BuildSphere.Data.Repository.Interfaces
 {

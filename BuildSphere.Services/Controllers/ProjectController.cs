@@ -1,7 +1,6 @@
 ﻿
 using BuildSphere.Core.Interfaces;
-using BuildSphere.Data.Repository.Definitions;
-using BuildSphere.Data.Repository.Interfaces;
+using BuildSphere.Common.Definitions;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BuildSphere.Services.Controllers

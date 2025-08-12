@@ -1,6 +1,7 @@
-﻿using BuildSphere.Data.Repository.Interfaces;
+﻿
+using BuildSphere.Common.Interfaces;
 
-namespace BuildSphere.Data.Repository.Definitions
+namespace BuildSphere.Common.Definitions
 {
     /// <summary>
     /// It is step at which the payment need to be settled to the builder for the project.

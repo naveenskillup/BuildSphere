@@ -1,5 +1,5 @@
 ﻿
-namespace BuildSphere.Data.Repository.Interfaces
+namespace BuildSphere.Common.Interfaces
 {
     public interface IIdentifiable
     {

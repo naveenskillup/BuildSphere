@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
-using BuildSphere.Data.Repository.Interfaces;
+using BuildSphere.Common.Interfaces;
 
-namespace BuildSphere.Data.Repository.Definitions
+namespace BuildSphere.Common.Definitions
 { 
     public class Project : IIdentifiable
     {

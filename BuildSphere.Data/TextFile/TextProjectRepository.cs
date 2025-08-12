@@ -1,5 +1,5 @@
-﻿using BuildSphere.Data.Repository.Definitions;
-using BuildSphere.Data.Repository.Interfaces;
+﻿
+using BuildSphere.Common.Definitions;
 
 namespace BuildSphere.Data.TextFile
 {

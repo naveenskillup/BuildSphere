@@ -1,4 +1,6 @@
-﻿using BuildSphere.Data.Repository.Definitions;
+﻿
+
+using BuildSphere.Common.Definitions;
 
 namespace BuildSphere.Data.Repository.Interfaces
 {

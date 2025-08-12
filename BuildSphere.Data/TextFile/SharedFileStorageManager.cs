@@ -1,5 +1,5 @@
 ﻿using System.Text.Json;
-using BuildSphere.Data.Repository.Interfaces;
+using BuildSphere.Common.Interfaces;
 
 namespace BuildSphere.Data.TextFile
 {

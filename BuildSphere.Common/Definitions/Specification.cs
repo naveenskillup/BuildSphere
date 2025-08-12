@@ -1,6 +1,6 @@
-﻿using BuildSphere.Data.Repository.Interfaces;
+﻿using BuildSphere.Common.Interfaces;
 
-namespace BuildSphere.Data.Repository.Definitions
+namespace BuildSphere.Common.Definitions
 {
     /// <summary>
     /// Specifications of the house.

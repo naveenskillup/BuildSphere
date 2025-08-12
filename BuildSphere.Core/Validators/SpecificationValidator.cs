@@ -1,5 +1,5 @@
 ﻿
-using BuildSphere.Data.Repository.Definitions;
+using BuildSphere.Common.Definitions;
 using FluentValidation;
 
 namespace BuildSphere.Core.Validators
