@@ -2,9 +2,10 @@ using BuildSphere.Core;
 using BuildSphere.Core.Interfaces;
 using BuildSphere.Core.Services;
 using BuildSphere.Data.DataManager.Sql;
-using BuildSphere.Data.Repository.Interfaces;
-using BuildSphere.Data.TextFile;
 using BuildSphere.Services.Middlewares;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 

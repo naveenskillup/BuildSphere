@@ -9,10 +9,8 @@
             Configuration = configuration;
         }
 
-        // Register services here
         public void ConfigureServices(IServiceCollection services)
         {
-            // Authentication
             services.AddAuthentication("MyCookieAuth")
                 .AddCookie("MyCookieAuth", options =>
                 {
