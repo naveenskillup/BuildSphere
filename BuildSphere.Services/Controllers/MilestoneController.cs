@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BuildSphere.Services.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/milestones")]
     [ApiController]
     public class MilestoneController : ControllerBase
     {

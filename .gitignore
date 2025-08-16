@@ -2,3 +2,5 @@
 **/bin/
 .vs/
 **/.vs/
+BuildSphere.SqlDatabase/BuildSphere.SqlDatabase.dbmdl
+BuildSphere.SqlDatabase/BuildSphere.SqlDatabase.jfm

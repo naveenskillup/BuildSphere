@@ -16,6 +16,7 @@ namespace BuildSphere.Core
             services.AddScoped<IProjectRepository, SqlProjectRepository>();
             services.AddScoped<IMilestoneRepository, SqlMilestoneRepository>();
             services.AddScoped<ISpecificationRepository, SqlSpecificationRepository>();
+            services.AddScoped<IUserRepository, SqlUserRepository>();
 
             return services;
         }
