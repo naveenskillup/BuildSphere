@@ -1,7 +1,10 @@
-﻿namespace BuildSphere.Services.Authentication
+﻿
+using System.Threading.Tasks;
+
+namespace BuildSphere.Services.Authentication
 {
     public interface IAuthService
     {
-        public bool Authenticate(string userName, string password);
+        Task<string> Authenticate(string userName, string password);
     }
 }
