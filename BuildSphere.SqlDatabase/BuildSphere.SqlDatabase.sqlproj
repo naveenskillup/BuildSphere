@@ -79,5 +79,12 @@
     <Build Include="dbo\Stored Procedures\sp_DeleteMilestone.sql" />
     <Build Include="dbo\Stored Procedures\sp_CreateSpecification.sql" />
     <Build Include="dbo\Stored Procedures\sp_CreateMilestone.sql" />
+    <Build Include="dbo\Tables\User.sql" />
+    <Build Include="dbo\Stored Procedures\sp_UpdateUser.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetUsers.sql" />
+    <Build Include="dbo\Stored Procedures\Sp_GetUserByUserNameAndPassword.sql" />
+    <Build Include="dbo\Stored Procedures\Sp_GetUserByUserName.sql" />
+    <Build Include="dbo\Stored Procedures\sp_DeleteUser.sql" />
+    <Build Include="dbo\Stored Procedures\sp_CreateUser.sql" />
   </ItemGroup>
 </Project>

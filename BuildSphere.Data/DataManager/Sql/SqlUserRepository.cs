@@ -22,7 +22,7 @@ namespace BuildSphere.Data.DataManager.Sql
         {
             var parameters = new DynamicParameters();
             parameters.Add("UserName", userName);
-            return await QueryFirstAsync(StoredProcedures.User.Get, parameters);
+            return await QueryFirstAsync(StoredProcedures.User.GetByUserName, parameters);
         }
 
         public async Task<User> GetByUserNameAndPassword(string userName, string password)
@@ -30,7 +30,7 @@ namespace BuildSphere.Data.DataManager.Sql
             var parameters = new DynamicParameters();
             parameters.Add("UserName", userName);
             parameters.Add("Password", password);
-            return await QueryFirstAsync(StoredProcedures.Project.Get, parameters);
+            return await QueryFirstAsync(StoredProcedures.User.GetByUserNameAndPassword, parameters);
         }
 
         public async Task Create(User user)
