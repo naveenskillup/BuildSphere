@@ -1,4 +1,6 @@
-﻿namespace BuildSphere.Web.Configure
+﻿using BuildSphere.Common.Adaptors;
+
+namespace BuildSphere.Web.Configure
 {
     public class Startup
     {
@@ -20,6 +22,11 @@
                 });
 
             services.AddControllersWithViews();
+            //services.AddHttpClient<ApiClient>(client =>
+            //{
+            //    client.BaseAddress = new Uri("https://localhost:7012/"); 
+            //});
+            //services.RegisterAdapters();
         }
 
         // Configure HTTP request pipeline here

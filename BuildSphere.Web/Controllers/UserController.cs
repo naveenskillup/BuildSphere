@@ -1,11 +1,14 @@
 ﻿using Microsoft.AspNetCore.Authentication;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Mvc;
+using BuildSphere.Web.Adapters;
+using BuildSphere.Common.Requests;
 
 namespace BuildSphere.Web.Controllers
 {
     public class UserController : Controller
     {
+
         [HttpGet]
         public IActionResult Login()
         {

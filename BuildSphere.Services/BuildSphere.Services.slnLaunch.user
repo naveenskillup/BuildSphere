@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "BuildSphere.Services.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "..\\BuildSphere.Web\\BuildSphere.Web.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]
