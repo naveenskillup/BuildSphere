@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using BuildSphere.Common.Definitions;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 
@@ -12,17 +13,17 @@ namespace BuildSphere.Services.Authentication
     {
         public JWTTokenGenerationService(IConfiguration configuration)
         {
-            _secretKey = configuration["Jwt:SecretKey"];
+            _secretKey = configuration["Jwt:Key"];
             _issuer = configuration["Jwt:Issuer"];
             _audience = configuration["Jwt:Audience"];
         }
 
-        public string GenerateToken(string username, string role, int expirationInMinutes = 5)
+        public string GenerateToken(string username, UserRoles role, int expirationInMinutes = 5)
         {
             var claims = new List<Claim>()
             {
                 new Claim(JwtRegisteredClaimNames.Sub, username),
-                new Claim(ClaimTypes.Role, role)
+                new Claim(ClaimTypes.Role, role.ToString())
             };
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_secretKey));
             var credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);

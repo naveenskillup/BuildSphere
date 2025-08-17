@@ -3,12 +3,14 @@ using System.Threading.Tasks;
 using BuildSphere.Common.Definitions;
 using BuildSphere.Core.Interfaces;
 using BuildSphere.Data.Repository.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BuildSphere.Services.Controllers
 {
     [Route("api/users")]
     [ApiController]
+    [AllowAnonymous]
     public class UserController : ControllerBase
     {
         public UserController(IUserService userRepository)

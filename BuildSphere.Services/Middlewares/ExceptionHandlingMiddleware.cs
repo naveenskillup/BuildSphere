@@ -24,7 +24,7 @@ namespace BuildSphere.Services.Middlewares
             }
             catch(Exception ex)
             {
-                await WriteErrorResponse(context, (int)HttpStatusCode.InternalServerError, "An unexpected error occurred.");
+                await WriteErrorResponse(context, (int)HttpStatusCode.InternalServerError, ex.Message);
             }
         }
 

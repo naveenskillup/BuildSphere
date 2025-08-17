@@ -15,7 +15,7 @@ namespace BuildSphere.Data.DataManager.Sql
         public async Task<Project> GetById(int id)
         {
             var parameters = new { Id = id };
-            return await QueryFirstAsync(StoredProcedures.Project.GetById, parameters);
+            return await QueryFirstOrDefaultAsync(StoredProcedures.Project.GetById, parameters);
         }
 
         public async Task Create(Project project)

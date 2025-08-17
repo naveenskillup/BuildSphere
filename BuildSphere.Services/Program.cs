@@ -4,7 +4,9 @@ using BuildSphere.Core;
 using BuildSphere.Core.Interfaces;
 using BuildSphere.Core.Services;
 using BuildSphere.Data.DataManager.Sql;
+using BuildSphere.Services.Configurations;
 using BuildSphere.Services.Middlewares;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
@@ -23,7 +25,7 @@ builder.Services.AddSingleton<SqlConnectionFactory>( provider =>
 });
 
 builder.Services.AddDataServices();
-builder.Services.AddScoped<IProjectService, ProjectService>();
+builder.Services.RegisterCoreServices();
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
@@ -54,6 +56,7 @@ app.UseMiddleware<ExceptionHandlingMiddleware>();
 app.UseSwagger();
 app.UseSwaggerUI();
 
+app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();

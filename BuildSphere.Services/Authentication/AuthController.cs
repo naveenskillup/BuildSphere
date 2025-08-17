@@ -1,12 +1,13 @@
 ﻿using System.Threading.Tasks;
-using BuildSphere.Common.DTOs;
-using Microsoft.AspNetCore.Http;
+using BuildSphere.Common.Requests;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BuildSphere.Services.Authentication
 {
     [Route("api/auth")]
     [ApiController]
+    [AllowAnonymous]
     public class AuthController : ControllerBase
     {
         public AuthController(IAuthService authService)
@@ -18,6 +19,7 @@ namespace BuildSphere.Services.Authentication
             var token = await _authService.Authenticate(request.UserName, request.Password);
             return Ok(token);
         }
+
         private readonly IAuthService _authService;
 
     }

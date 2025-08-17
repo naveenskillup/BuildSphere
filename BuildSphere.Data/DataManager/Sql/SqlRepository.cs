@@ -34,10 +34,10 @@ namespace BuildSphere.Data.DataManager.Sql
             return await conn.QueryAsync<T>(storedProcedure, parameters, commandType: CommandType.StoredProcedure);
         }
 
-        protected async Task<T> QueryFirstAsync(string storedProcedure, object? parameters = null)
+        protected async Task<T?> QueryFirstOrDefaultAsync(string storedProcedure, object? parameters = null)
         {
             using var conn = await _connectionFactory.GetConnectionAsync();
-            return await conn.QueryFirstAsync<T>(storedProcedure, parameters, commandType: CommandType.StoredProcedure);
+            return await conn.QueryFirstOrDefaultAsync<T?>(storedProcedure, parameters, commandType: CommandType.StoredProcedure);
         }
 
         protected async Task<int> InsertAndReturnIdAsync(string storedProcedure, object? parameters = null)

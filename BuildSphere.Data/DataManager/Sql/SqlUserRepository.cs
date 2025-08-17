@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 using BuildSphere.Common.Definitions;
 using BuildSphere.Data.Repository.Interfaces;
 using Dapper;
@@ -22,7 +18,7 @@ namespace BuildSphere.Data.DataManager.Sql
         {
             var parameters = new DynamicParameters();
             parameters.Add("UserName", userName);
-            return await QueryFirstAsync(StoredProcedures.User.GetByUserName, parameters);
+            return await QueryFirstOrDefaultAsync(StoredProcedures.User.GetByUserName, parameters);
         }
 
         public async Task<User> GetByUserNameAndPassword(string userName, string password)
@@ -30,11 +26,14 @@ namespace BuildSphere.Data.DataManager.Sql
             var parameters = new DynamicParameters();
             parameters.Add("UserName", userName);
             parameters.Add("Password", password);
-            return await QueryFirstAsync(StoredProcedures.User.GetByUserNameAndPassword, parameters);
+            return await QueryFirstOrDefaultAsync(StoredProcedures.User.GetByUserNameAndPassword, parameters);
         }
 
         public async Task Create(User user)
-            => user.Id = await InsertAndReturnIdAsync(StoredProcedures.User.Create);
+        {
+            var parameters = ObjectToParameters(user, new[] { "Id" });
+            user.Id = await InsertAndReturnIdAsync(StoredProcedures.User.Create, parameters);
+        }
 
         public async Task Update(int id, User user)
         {
