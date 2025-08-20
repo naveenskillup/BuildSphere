@@ -21,12 +21,19 @@ namespace BuildSphere.Web.Configure
                     options.ExpireTimeSpan = TimeSpan.FromMinutes(15);
                 });
 
+            services.AddHttpClient("ApiClient", client =>
+            {
+                client.BaseAddress = new Uri("https://localhost:7012/");
+            });
+
+            services.AddScoped<ApiClient>(sp =>
+            {
+                var factory = sp.GetRequiredService<IHttpClientFactory>();
+                return new ApiClient(factory.CreateClient("ApiClient"));
+            });
+
+            services.RegisterAdapters();
             services.AddControllersWithViews();
-            //services.AddHttpClient<ApiClient>(client =>
-            //{
-            //    client.BaseAddress = new Uri("https://localhost:7012/"); 
-            //});
-            //services.RegisterAdapters();
         }
 
         // Configure HTTP request pipeline here

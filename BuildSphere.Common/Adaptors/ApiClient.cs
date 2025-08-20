@@ -31,16 +31,23 @@ namespace BuildSphere.Common.Adaptors
 
         public async Task<ApiResult<T>> SendAsync<T>(HttpMethod method, string endpoint, object? data = null)
         {
-            var request = new HttpRequestMessage(method, endpoint);
-
-            if (method == HttpMethod.Post || method == HttpMethod.Put || method == HttpMethod.Patch)
+            try
             {
-                var serializedData = JsonSerializer.Serialize(data) ;
-                request.Content = new StringContent(serializedData, Encoding.UTF8, "application/json");
-            }
+                var request = new HttpRequestMessage(method, endpoint);
 
-            var response = await _httpClient.SendAsync(request);
-            return await HandleResponse<T>(response);
+                if (method == HttpMethod.Post || method == HttpMethod.Put || method == HttpMethod.Patch)
+                {
+                    var serializedData = JsonSerializer.Serialize(data);
+                    request.Content = new StringContent(serializedData, Encoding.UTF8, "application/json");
+                }
+
+                var response = await _httpClient.SendAsync(request);
+                return await HandleResponse<T>(response);
+            }
+            catch(Exception ex)
+            {
+                throw new Exception($"Internal server exception:{ex.Message}");
+            }
         }
 
         private async Task<ApiResult<T>> HandleResponse<T>(HttpResponseMessage response)
@@ -48,8 +55,8 @@ namespace BuildSphere.Common.Adaptors
             if (response.IsSuccessStatusCode)
             {
                 var content = await response.Content.ReadAsStringAsync();
-                var result = JsonSerializer.Deserialize<T>(content, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
-                return new ApiResult<T> { Success = true, Data = result };
+                var result = typeof(T) == typeof(string) ? (object)content : JsonSerializer.Deserialize<T>(content,new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+                return new ApiResult<T> { Success = true, Data = (T)result };
             }
 
             return new ApiResult<T>

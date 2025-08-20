@@ -14,6 +14,7 @@ namespace BuildSphere.Web.Adapters
             => await _apiClient.SendAsync<string>(HttpMethod.Post, "api/auth/login", request);
 
         public void SetAuthToken(string token) => _apiClient.SetAuthToken(token);
+        public void ClearAuthToken() => _apiClient.ClearAuthToken();
 
         private readonly ApiClient _apiClient;
     }
