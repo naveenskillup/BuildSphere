@@ -1,0 +1,129 @@
+﻿<h2>Project Details</h2>
+
+<div class="card mb-3">
+	<div class="card-header">Project</div>
+	<div class="card-body">
+		<div class="row">
+			<div class="col-12 col-lg-6 mb-3">
+				<label class="form-label" for="ProjectName">Project Name</label>
+				<input type="text" id="ProjectName" class="form-control" />
+			</div>
+			<div class="col-6 col-lg-2 mb-3">
+				<label class="form-label" for="AdvanceAmount">Advance Amount</label>
+				<div class="input-group">
+					<input type="text" class="form-control" id="AdvanceAmount" />
+					<span class="input-group-text">₹</span>
+				</div>
+			</div>
+			<div class="col-6 col-lg-2 mb-3">
+				<label class="form-label" for="StartDate">Start Date</label>
+				<input type="date" class="form-control" id="StartDate" />
+			</div>
+			<div class="col-6 col-lg-2 mb-3">
+				<label class="form-label" for="ExpectedCloseDate">Expected Close Date</label>
+				<input type="date" class="form-control" id="ExpectedCloseDate" />
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="card mb-3">
+	<div class="card-header">
+		<div class="d-flex justify-content-between">
+			<span>Specifications</span>
+			<a href="javascript:void(0)" class="text-primary text-decoration-none" onclick="addSpecification()">+ Add</a>
+		</div>
+	</div>
+	<div class="card-body">
+		<div id="specification-list">
+			<div class="card card-body mb-3 specification-item">
+				<div class="row mb-3">
+					<div class="col-12 col-lg-6 mb-3">
+						<div class="row">
+							<div class="col-12 col-lg-6 mb-3">
+								<label class="form-label" for="SpecificationName">Name</label>
+								<input type="text" id="SpecificationName" class="form-control" />
+							</div>
+							<div class="col-12 col-lg-6 mb-3">
+								<label class="form-label" for="MeterialType">MeterialType</label>
+								<input type="text" id="MeterialType" class="form-control" />
+							</div>
+							<div class="col-12 col-lg-6 mb-3">
+								<label class="form-label" for="Quantity">Quantity</label>
+								<input type="text" id="Quantity" class="form-control" />
+							</div>
+						</div>
+
+					</div>
+					<div class="col-12 col-lg-6 mb-3">
+						<div class="col-12">
+							<label class="form-label" for="AdditionalInfo">Additional Information</label>
+							<textarea class="form-control" id="AdditionalInfo" rows="4"></textarea>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="card">
+	<div class="card-header">
+		<div class="d-flex justify-content-between">
+			<span>Milestones</span>
+			<a href="javascript:void(0)" class="text-primary text-decoration-none" onclick="addMilestone()">+ Add</a>
+		</div>
+	</div>
+	<div id="milestone-list">
+		<div class="card-body">
+			<div class="card card-body mb-3 milestone-item">
+				<div class="row">
+					<div class="col-12 col-md-6 col-lg-3 mb-3">
+						<label class="form-label" for="MilestoneType">Milestone Type</label>
+						<select class="form-select" id="MilestoneType">
+							<option value="">Select Milestone Type</option>
+							<option value="1">Basement</option>
+							<option value="2">Roofing</option>
+							<option value="3">Drywall</option>
+							<option value="4">Interior</option>
+							<option value="5">Exterior</option>
+							<option value="6">Handover</option>
+						</select>
+					</div>
+					<div class="col-12 col-md-6 col-lg-2 mb-3">
+						<label class="form-label" for="PaymentAmount">Amount</label>
+						<div class="input-group">
+							<input type="text" class="form-control" id="PaymentAmount" />
+							<span class="input-group-text">₹</span>
+						</div>
+					</div>
+					<div class="col-12 col-md-6 col-lg-2 mb-3">
+						<label class="form-label" for="PaidDate">Payment Date</label>
+						<input type="date" class="form-control" id="PaidDate" />
+					</div>
+					<div class="col-12 col-md-2 d-flex align-items-end">
+						<a href="javascript:void(0)" class="text-danger text-decoration-none" onclick="removeItem(this)">🗑️ Delete</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+	function addSpecification(){
+		const container = document.getElementById("specification-list");
+		const item =container.querySelector(".specification-item").cloneNode(true);
+		item.querySelectorAll("input").forEach(i => i.value="");
+		container.appendChild(item);
+	}
+	
+	function addMilestone(){
+		const container = document.getElementById("milestone-list");
+		const item =container.querySelector(".milestone-item").cloneNode(true);
+		item.querySelectorAll("input").forEach(i => i.value="");
+		container.appendChild(item);
+	}
+	
+	function removeItem(button) {
+		button.closest(".card-body").remove();
+	}
+</script>
